@@ -1,0 +1,20 @@
+load("@contrib_rules_jvm//java:defs.bzl", "java_binary", "java_library")
+
+java_library(
+    name = "bidi",
+    srcs = ["Main.java"],
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//java/src/org/openqa/selenium/bidi/browsingcontext",
+        "@maven//:org_seleniumhq_selenium_selenium_chrome_driver",
+        "@maven//:org_seleniumhq_selenium_selenium_http",
+        "@maven//:org_seleniumhq_selenium_selenium_remote_driver",
+    ],
+)
+
+java_binary(
+    name = "Main",
+    main_class = "org.openqa.selenium.example.bidi.Main",
+    visibility = ["//visibility:public"],
+    runtime_deps = [":bidi"],
+)

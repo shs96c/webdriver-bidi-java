@@ -2,6 +2,17 @@ load("@contrib_rules_jvm//java:defs.bzl", "java_library")
 
 java_library(
     name = "browsingcontext",
-    srcs = ["BrowsingContextModule.java"],
+    srcs = [
+        "BrowsingContext.java",
+        "BrowsingContextInfo.java",
+        "BrowsingContextModule.java",
+        "GetTreeParameters.java",
+        "GetTreeResult.java",
+    ],
     visibility = ["//:__subpackages__"],
+    deps = [
+        "//java/src/org/openqa/selenium/bidi/browser",
+        "@maven//:org_seleniumhq_selenium_selenium_json",
+        "@maven//:org_seleniumhq_selenium_selenium_remote_driver",
+    ],
 )

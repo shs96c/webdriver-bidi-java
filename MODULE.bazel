@@ -8,6 +8,9 @@ maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 
 maven.install(
     artifacts = [
+        "org.seleniumhq.selenium:selenium-api",
+        "org.seleniumhq.selenium:selenium-chrome-driver",
+        "org.seleniumhq.selenium:selenium-http",
         "org.seleniumhq.selenium:selenium-json",
         "org.seleniumhq.selenium:selenium-remote-driver",
     ],
