@@ -1,0 +1,21 @@
+module(name = "webdriverbidi")
+
+bazel_dep(name = "rules_jvm_external", version = "6.7")
+
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+
+maven.install(
+    artifacts = [
+        "org.seleniumhq.selenium:selenium-json",
+        "org.seleniumhq.selenium:selenium-remote-driver",
+    ],
+    boms = [
+        "org.seleniumhq.selenium:selenium-bom:4.30.0",
+    ],
+    fetch_sources = True,
+    fail_if_repin_required = True,
+    lock_file = "//java:maven_install.json",
+    strict_visibility = True,
+)
+
+use_repo(maven, "maven")
