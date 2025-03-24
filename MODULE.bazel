@@ -1,5 +1,7 @@
 module(name = "webdriverbidi")
 
+bazel_dep(name = "contrib_rules_jvm", version = "0.28.0")
+bazel_dep(name = "gazelle", version = "0.42.0")
 bazel_dep(name = "rules_jvm_external", version = "6.7")
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")

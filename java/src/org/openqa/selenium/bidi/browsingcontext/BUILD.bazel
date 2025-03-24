@@ -1,0 +1,7 @@
+load("@contrib_rules_jvm//java:defs.bzl", "java_library")
+
+java_library(
+    name = "browsingcontext",
+    srcs = ["BrowsingContextModule.java"],
+    visibility = ["//:__subpackages__"],
+)

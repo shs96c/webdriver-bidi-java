@@ -1,15 +1,6 @@
 try-import %workspace%/.bazelrc.local
 try-import %workspace%/.bazelrc.windows.local
 
-# Enable bzlmod but without lockfile for a moment.
-# Lockfile is a problem to check in at the moment
-# because of constant Git conflicts and platform-specific
-# pieces.
-# https://github.com/bazelbuild/bazel/issues/20369
-# https://github.com/bazelbuild/bazel/issues/21491
-
-common --lockfile_mode=off
-
 # Prepare for Bazel 8. These become the default in 8.0.0
 common --incompatible_disallow_empty_glob
 common --incompatible_use_plus_in_repo_names
@@ -44,7 +35,7 @@ build --javacopt="-Xep:ImpossibleNullComparison:OFF"
 build --nobuild_runfile_links
 
 # More JS magic
-build --experimental_allow_unresolved_symlinks
+build --allow_unresolved_symlinks
 # Avoid a warning about directory tracking being unsound
 startup --host_jvm_args=-DBAZEL_TRACK_SOURCE_DIRECTORIES=1
 
