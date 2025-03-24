@@ -9,4 +9,11 @@ public class BrowsingContextModule {
                 parameters.asMap(),
                 GetTreeResult.class);
     }
+
+    public Command<NavigationResult> navigate(NavigationParameters parameters) {
+        return new Command<>(
+                "browsingContext.navigate",
+                parameters.asMap(),
+                NavigationResult.class);
+    }
 }

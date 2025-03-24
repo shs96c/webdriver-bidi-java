@@ -2,9 +2,13 @@ package org.openqa.selenium.example.bidi;
 
 import org.openqa.selenium.bidi.Command;
 import org.openqa.selenium.bidi.Connection;
+import org.openqa.selenium.bidi.browsingcontext.BrowsingContext;
 import org.openqa.selenium.bidi.browsingcontext.BrowsingContextModule;
 import org.openqa.selenium.bidi.browsingcontext.GetTreeParameters;
 import org.openqa.selenium.bidi.browsingcontext.GetTreeResult;
+import org.openqa.selenium.bidi.browsingcontext.NavigationParameters;
+import org.openqa.selenium.bidi.browsingcontext.NavigationResult;
+import org.openqa.selenium.bidi.browsingcontext.ReadinessState;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;
@@ -35,6 +39,16 @@ public class Main {
 
             System.err.println(getTreeResult.getContexts());
 
+            // Grab the first context
+            BrowsingContext context = getTreeResult.getContexts().iterator().next().getContext();
+
+            Command<NavigationResult> navigationCommand = browsingContextModule.navigate(
+                    new NavigationParameters(
+                            context,
+                            "http://rocketpoweredjetpants.com",
+                            ReadinessState.COMPLETE));
+            NavigationResult navigationResult = connection.sendAndWait(navigationCommand, Duration.ofMinutes(5));
+            System.err.println("URL is now: " + navigationResult.getUrl());
         }
 
         driver.quit();

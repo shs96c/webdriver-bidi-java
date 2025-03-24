@@ -8,6 +8,7 @@ java_library(
         "BrowsingContextModule.java",
         "GetTreeParameters.java",
         "GetTreeResult.java",
+        "NavigationParameters.java",
     ],
     visibility = ["//:__subpackages__"],
     deps = [
