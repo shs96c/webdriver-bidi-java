@@ -2,7 +2,12 @@ load("@contrib_rules_jvm//java:defs.bzl", "java_library")
 
 java_library(
     name = "bidi",
-    srcs = ["BidiCommandExecutor.java"],
+    srcs = [
+        "BidiCommandExecutor.java",
+        "GetCommand.java",
+        "GetCurrentUrl.java",
+        "GetTitle.java",
+    ],
     visibility = ["//:__subpackages__"],
     exports = ["@maven//:org_seleniumhq_selenium_selenium_remote_driver"],
     deps = [
