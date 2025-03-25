@@ -1,7 +1,7 @@
-package org.openqa.selenium.bidi.browsingcontext;
+package org.openqa.selenium.bidirectional.browsingcontext;
 
-import org.openqa.selenium.bidi.browser.ClientWindow;
-import org.openqa.selenium.bidi.browser.UserContext;
+import org.openqa.selenium.bidirectional.browser.ClientWindow;
+import org.openqa.selenium.bidirectional.browser.UserContext;
 import org.openqa.selenium.json.JsonInput;
 import org.openqa.selenium.json.TypeToken;
 
@@ -40,6 +40,10 @@ public class BrowsingContextInfo {
 
     public BrowsingContext getContext() {
         return context;
+    }
+
+    public String getUrl() {
+        return url;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package org.openqa.selenium.bidi.browser;
+package org.openqa.selenium.bidirectional.browser;
 
 import org.openqa.selenium.json.JsonInput;
 

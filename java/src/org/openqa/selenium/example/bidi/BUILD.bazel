@@ -5,7 +5,8 @@ java_library(
     srcs = ["Main.java"],
     visibility = ["//:__subpackages__"],
     deps = [
-        "//java/src/org/openqa/selenium/bidi/browsingcontext",
+        "//java/src/org/openqa/selenium/remote/bidi",
+        "@maven//:org_seleniumhq_selenium_selenium_api",
         "@maven//:org_seleniumhq_selenium_selenium_chrome_driver",
         "@maven//:org_seleniumhq_selenium_selenium_http",
         "@maven//:org_seleniumhq_selenium_selenium_remote_driver",

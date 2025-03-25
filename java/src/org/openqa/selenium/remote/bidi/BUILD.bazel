@@ -1,0 +1,15 @@
+load("@contrib_rules_jvm//java:defs.bzl", "java_library")
+
+java_library(
+    name = "bidi",
+    srcs = ["BidiCommandExecutor.java"],
+    visibility = ["//:__subpackages__"],
+    exports = ["@maven//:org_seleniumhq_selenium_selenium_remote_driver"],
+    deps = [
+        "//java/src/org/openqa/selenium/bidirectional/browsingcontext",
+        "//java/src/org/openqa/selenium/bidirectional/script",
+        "@maven//:org_seleniumhq_selenium_selenium_api",
+        "@maven//:org_seleniumhq_selenium_selenium_http",
+        "@maven//:org_seleniumhq_selenium_selenium_remote_driver",
+    ],
+)

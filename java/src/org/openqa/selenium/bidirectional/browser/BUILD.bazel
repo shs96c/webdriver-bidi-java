@@ -2,7 +2,11 @@ load("@contrib_rules_jvm//java:defs.bzl", "java_library")
 
 java_library(
     name = "browser",
-    srcs = ["UserContext.java"],
+    srcs = [
+        "ClientWindow.java",
+        "ClientWindowState.java",
+        "UserContext.java",
+    ],
     visibility = ["//:__subpackages__"],
     deps = ["@maven//:org_seleniumhq_selenium_selenium_json"],
 )

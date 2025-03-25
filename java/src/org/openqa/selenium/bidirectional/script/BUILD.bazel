@@ -1,0 +1,36 @@
+load("@contrib_rules_jvm//java:defs.bzl", "java_library")
+
+java_library(
+    name = "script",
+    srcs = [
+        "CallFunctionParameters.java",
+        "ContextTarget.java",
+        "DateLocalValue.java",
+        "EvaluateParameters.java",
+        "EvaluateResult.java",
+        "EvaluateResultException.java",
+        "EvaluateResultSuccess.java",
+        "ExceptionDetails.java",
+        "ListLocalValue.java",
+        "LocalValue.java",
+        "NullValue.java",
+        "PrimitiveProtocolValue.java",
+        "Realm.java",
+        "RemoteValue.java",
+        "ResultOwnership.java",
+        "ScriptModule.java",
+        "SerializationOptions.java",
+        "StackFrame.java",
+        "StackTrace.java",
+        "StringValue.java",
+        "Target.java",
+        "UndefinedValue.java",
+        "ValueHelper.java",
+    ],
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "@maven//:org_seleniumhq_selenium_selenium_api",
+        "@maven//:org_seleniumhq_selenium_selenium_json",
+        "@maven//:org_seleniumhq_selenium_selenium_remote_driver",
+    ],
+)

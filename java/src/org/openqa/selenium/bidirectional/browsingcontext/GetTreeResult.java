@@ -1,4 +1,4 @@
-package org.openqa.selenium.bidi.browsingcontext;
+package org.openqa.selenium.bidirectional.browsingcontext;
 
 import java.util.Collection;
 import java.util.Set;
